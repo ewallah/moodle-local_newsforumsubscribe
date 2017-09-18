@@ -41,7 +41,7 @@ class local_newsforumsubscribe_usercreated_task extends \core\task\adhoc_task {
      * @return boolean
      */
     public function execute() {
-        global $CFG, $DB;
+        global $DB;
         $data = $this->get_custom_data();
         if ($forum = $DB->get_record('forum', ['courseid' => 1, 'type' => 'news'])) {
             $id = $data->userid;

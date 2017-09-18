@@ -40,7 +40,7 @@ function xmldb_local_newsforumsubscribe_install() {
                     $sub = new \stdClass();
                     $sub->userid  = $userid;
                     $sub->forum = $forum->id;
-                    $result = $DB->insert_record("forum_subscriptions", $sub);
+                    $DB->insert_record("forum_subscriptions", $sub);
                 }
             }
         }

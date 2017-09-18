@@ -27,5 +27,4 @@ defined('MOODLE_INTERNAL') || die();
 
 $observers = [['eventname' => 'core\event\user_created',
                'callback'  => 'local_newsforumsubscribe::usercreated',
-               'internal'  => false,
-               'priority'  => 10]];
+               'internal'  => false]];
