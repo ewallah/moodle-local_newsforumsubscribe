@@ -32,7 +32,8 @@ defined('MOODLE_INTERNAL') || die();
  */
 function xmldb_local_newsforumsubscribe_install() {
     global $DB;
-    if ($forum = $DB->get_record('forum', ['course' => 1, 'type' => 'news', 'forcesubscribe' => 1])) {
+    $params = ['course' => 1, 'type' => 'news', 'forcesubscribe' => 1];
+    if ($forum = $DB->get_record('forum', $params)) {
         if ($DB->set_field('forum', 'forcesubscribe', 0, $params)) {
             if ($userids = $DB->get_fieldset_select('user', 'id', 'confirmed = 1 AND deleted = 0 AND suspended = 0')) {
                 foreach ($userids as $userid) {
