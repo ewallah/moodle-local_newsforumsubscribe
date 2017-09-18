@@ -1,4 +1,4 @@
-@ewallah @local_newsforumsubscribe
+@ewallah @newsforumsubscribe
 Feature: New users are automatically subscribed to main news forum
   
   @javascript
