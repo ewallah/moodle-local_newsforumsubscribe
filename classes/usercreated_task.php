@@ -42,8 +42,8 @@ class local_newsforumsubscribe_usercreated_task extends \core\task\adhoc_task {
      */
     public function execute() {
         global $DB;
-        $data = $this->get_custom_data();
-        if ($forum = $DB->get_record('forum', ['courseid' => 1, 'type' => 'news'])) {
+        if ($forum = $DB->get_record('forum', ['course' => 1, 'type' => 'news', 'forcesubscribe' => 1])) {
+            $data = $this->get_custom_data();
             $id = $data->userid;
             \mod_forum\subscriptions::subscribe_user($id, $forum);
             mtrace("User $id subscribed");

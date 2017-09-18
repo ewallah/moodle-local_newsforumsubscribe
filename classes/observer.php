@@ -15,33 +15,25 @@
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
- * Installation of local newsforumsubscribe
+ * Event observers
  *
  * @package    local_newsforumsubscribe
  * @copyright  2017 eWallah
  * @author     Renaat Debleu (info@eWallah.net)
- * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
+
 
 defined('MOODLE_INTERNAL') || die();
 
-/**
- * Post installation procedure
- *
- * @see upgrade_plugins_modules()
- */
-function xmldb_local_newsforumsubscribe_install() {
-    global $DB;
-    if ($forum = $DB->get_record('forum', ['course' => 1, 'type' => 'news', 'forcesubscribe' => 1])) {
-        if ($DB->set_field('forum', 'forcesubscribe', 0, $params)) {
-            if ($userids = $DB->get_fieldset_select('user', 'id', 'confirmed = 1 AND deleted = 0 AND suspended = 0')) {
-                foreach ($userids as $userid) {
-                    $sub = new \stdClass();
-                    $sub->userid  = $userid;
-                    $sub->forum = $forum->id;
-                    $DB->insert_record("forum_subscriptions", $sub);
-                }
-            }
+class local_newsforumsubscribe_observer {
+
+    public static function usercreated(\core\event\user_created $user) {
+        if (!empty($user)) {
+            $adhock = new \local_newsforumsubscribe_usercreated_task();
+            $adhock->set_custom_data(['userid' => $user->objectid]);
+            $adhock->set_component('local_newsforumsubscribe');
+            \core\task\manager::queue_adhoc_task($adhock);
         }
     }
 }
