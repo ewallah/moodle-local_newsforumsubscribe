@@ -1,6 +1,6 @@
-@local_newsforumsubscribe
+@newsforumsubscribe
 Feature: New users are automatically subscribed to main news forum
-  
+
   @javascript
   Scenario: Latest course announcements are displayed and can be configured
     Given the following "users" exist:
@@ -40,4 +40,3 @@ Feature: New users are automatically subscribed to main news forum
     And I am on site homepage
     And I follow "Older topics"
     Then I should not see "Subscribe to this forum"
-    
