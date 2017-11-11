@@ -1,4 +1,4 @@
-@local_newsforumsubscribe
+@local @local_newsforumsubscribe
 Feature: New users are automatically subscribed to main news forum
 
   @javascript
