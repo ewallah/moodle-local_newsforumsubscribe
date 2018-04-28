@@ -23,5 +23,6 @@
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
-$string['pluginname'] = 'newsforumsubscribe';
 $string['configtitle'] = 'Auto subscribe new users to news forum on front page';
+$string['pluginname'] = 'newsforumsubscribe';
+$string['privacy:metadata'] = 'The local_newsforumsubscribe plugin does not store any personal data.';
