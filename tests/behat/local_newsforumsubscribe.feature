@@ -23,7 +23,7 @@ Feature: New users are automatically subscribed to main news forum
     Then I should not see "Subscribe to this forum"
     And I log out
     And I log in as "admin"
-    And I navigate to "Add a new user" node in "Site administration>Users>Accounts"
+    And I navigate to "Users > Accounts > Add a new user" in site administration
     And I set the following fields to these values:
       | Username                        | testmultiemailuser1             |
       | Choose an authentication method | Manual accounts                 |
