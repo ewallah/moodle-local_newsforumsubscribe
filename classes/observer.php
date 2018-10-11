@@ -20,14 +20,26 @@
  * @package    local_newsforumsubscribe
  * @copyright  2017 eWallah
  * @author     Renaat Debleu (info@eWallah.net)
- * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
-
 
 defined('MOODLE_INTERNAL') || die();
 
+/**
+ * Event observers
+ *
+ * @package    local_newsforumsubscribe
+ * @copyright  2017 eWallah
+ * @author     Renaat Debleu (info@eWallah.net)
+ * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ */
 class local_newsforumsubscribe_observer {
 
+    /**
+     * Create instance of event.
+     *
+     * @param \core\event\user_created $user new user
+     */
     public static function usercreated(\core\event\user_created $user) {
         if (!empty($user)) {
             $adhock = new \local_newsforumsubscribe_usercreated_task();
