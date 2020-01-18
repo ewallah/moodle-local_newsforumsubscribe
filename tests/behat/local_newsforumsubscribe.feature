@@ -1,5 +1,5 @@
 @local @local_newsforumsubscribe
-Feature: New users are automatically subscribed to main news forum
+Feature: New users are automatically subscribed to main news fora
 
   @javascript
   Scenario: Latest course announcements are displayed and can be configured
