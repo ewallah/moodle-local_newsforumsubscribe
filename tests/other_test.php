@@ -52,7 +52,7 @@ class local_newsforumsubscribe_other_testcase extends advanced_testcase {
         \local_newsforumsubscribe_observer::usercreated($event);
         $events = $sink->get_events();
         $sink->close();
-        $this->assertCount(1, $events);
+        $this->assertGreaterThanOrEqual(1, $events);
         ob_start();
         phpunit_util::run_all_adhoc_tasks();
         $data = ob_get_contents();
