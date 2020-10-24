@@ -57,6 +57,6 @@ class local_newsforumsubscribe_other_testcase extends advanced_testcase {
         phpunit_util::run_all_adhoc_tasks();
         $data = ob_get_contents();
         ob_end_clean();
-        $this->assertContains("User $user->id subscribed", $data);
+        $this->assertStringContainsString("User $user->id subscribed", $data);
     }
 }
