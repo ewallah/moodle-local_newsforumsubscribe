@@ -22,6 +22,7 @@
  * @author     Renaat Debleu (info@eWallah.net)
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
+namespace local_newsforumsubscribe;
 
 defined('MOODLE_INTERNAL') || die();
 
@@ -33,7 +34,7 @@ defined('MOODLE_INTERNAL') || die();
  * @author     Renaat Debleu (info@eWallah.net)
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
-class local_newsforumsubscribe_observer {
+class observer {
 
     /**
      * Create instance of event.
@@ -42,7 +43,7 @@ class local_newsforumsubscribe_observer {
      */
     public static function usercreated(\core\event\user_created $user) {
         if (!empty($user)) {
-            $adhock = new \local_newsforumsubscribe_usercreated_task();
+            $adhock = new usercreated_task();
             $adhock->set_custom_data(['userid' => $user->objectid]);
             $adhock->set_component('local_newsforumsubscribe');
             \core\task\manager::queue_adhoc_task($adhock);

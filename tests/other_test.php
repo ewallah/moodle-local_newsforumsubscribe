@@ -23,6 +23,8 @@
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
+namespace local_newsforumsubscribe;
+
 defined('MOODLE_INTERNAL') || die();
 
 
@@ -34,7 +36,7 @@ defined('MOODLE_INTERNAL') || die();
  * @author    Renaat Debleu <info@eWallah.net>
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
-class local_newsforumsubscribe_other_testcase extends advanced_testcase {
+class other_test extends \advanced_testcase {
 
     /**
      * Tests the task.
@@ -49,12 +51,12 @@ class local_newsforumsubscribe_other_testcase extends advanced_testcase {
         $user = $generator->create_user();
         $event = \core\event\user_created::create_from_userid($user->id);
         $event->trigger();
-        \local_newsforumsubscribe_observer::usercreated($event);
+        observer::usercreated($event);
         $events = $sink->get_events();
         $sink->close();
         $this->assertGreaterThanOrEqual(1, $events);
         ob_start();
-        phpunit_util::run_all_adhoc_tasks();
+        \phpunit_util::run_all_adhoc_tasks();
         $data = ob_get_contents();
         ob_end_clean();
         $this->assertStringContainsString("User $user->id subscribed", $data);

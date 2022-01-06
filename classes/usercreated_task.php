@@ -23,6 +23,8 @@
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
+namespace local_newsforumsubscribe;
+
 defined('MOODLE_INTERNAL') || die();
 
 /**
@@ -33,7 +35,7 @@ defined('MOODLE_INTERNAL') || die();
  * @author     Renaat Debleu (info@eWallah.net)
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
-class local_newsforumsubscribe_usercreated_task extends \core\task\adhoc_task {
+class usercreated_task extends \core\task\adhoc_task {
 
     /**
      * Execute scheduled task
