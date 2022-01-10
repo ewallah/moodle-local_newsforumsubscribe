@@ -24,8 +24,6 @@
  */
 namespace local_newsforumsubscribe;
 
-defined('MOODLE_INTERNAL') || die();
-
 /**
  * Event observers
  *

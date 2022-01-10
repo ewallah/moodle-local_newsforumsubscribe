@@ -25,8 +25,6 @@
 
 namespace local_newsforumsubscribe;
 
-defined('MOODLE_INTERNAL') || die();
-
 /**
  * Ad hoc subscribe new users to news forum
  *

@@ -25,9 +25,6 @@
 
 namespace local_newsforumsubscribe;
 
-defined('MOODLE_INTERNAL') || die();
-
-
 /**
  * Other tests for local newsforumsubscribe.
  *

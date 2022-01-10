@@ -25,8 +25,6 @@
 
 namespace local_newsforumsubscribe\privacy;
 
-defined('MOODLE_INTERNAL') || die();
-
 /**
  * Privacy main class.
  *
