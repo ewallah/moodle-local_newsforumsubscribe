@@ -39,6 +39,7 @@ class privacy_test extends provider_testcase {
 
     /**
      * Test returning metadata.
+     * @covers \local_newsforumsubscribe\privacy\provider
      */
     public function test_get_metadata() {
         $this->resetAfterTest(true);

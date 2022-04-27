@@ -37,6 +37,8 @@ class other_test extends \advanced_testcase {
 
     /**
      * Tests the task.
+     * @covers \local_newsforumsubscribe\observer
+     * @covers \local_newsforumsubscribe\usercreated_task
      */
     public function test_local_task() {
         $this->resetAfterTest();
