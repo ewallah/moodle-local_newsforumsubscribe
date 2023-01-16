@@ -29,7 +29,7 @@ Feature: New users are automatically subscribed to main news fora
       | Choose an authentication method | Manual accounts                 |
       | New password                    | test@User1                      |
       | First name                      | Test                            |
-      | Surname                         | Multi1                          |
+      | Last name                       | Multi1                          |
       | Email address                   | testmultiemailuser@example.com  |
     And I press "Create user"
     And I am on site homepage
