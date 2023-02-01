@@ -19,7 +19,7 @@
  *
  * @package    local_newsforumsubscribe
  * @copyright  2017 eWallah
- * @author     Renaat Debleu (info@eWallah.net)
+ * @author     Renaat Debleu <info@eWallah.net>
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
@@ -30,7 +30,7 @@ namespace local_newsforumsubscribe;
  *
  * @package    local_newsforumsubscribe
  * @copyright  2017 eWallah
- * @author     Renaat Debleu (info@eWallah.net)
+ * @author     Renaat Debleu <info@eWallah.net>
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class usercreated_task extends \core\task\adhoc_task {
