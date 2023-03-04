@@ -36,7 +36,7 @@ function xmldb_local_newsforumsubscribe_install() {
             if ($userids = $DB->get_fieldset_select('user', 'id', 'confirmed = 1 AND deleted = 0 AND suspended = 0')) {
                 foreach ($userids as $userid) {
                     $sub = new \stdClass();
-                    $sub->userid  = $userid;
+                    $sub->userid = $userid;
                     $sub->forum = $forum->id;
                     $DB->insert_record("forum_subscriptions", $sub);
                 }

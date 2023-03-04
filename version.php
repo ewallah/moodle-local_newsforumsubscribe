@@ -26,8 +26,8 @@
 defined('MOODLE_INTERNAL') || die;
 
 
-$plugin->version   = 2018042800;
+$plugin->version = 2018042800;
 $plugin->component = 'local_newsforumsubscribe';
-$plugin->release   = '3.4+';
-$plugin->requires  = 2017051502;
-$plugin->maturity  = MATURITY_RC;
+$plugin->release = '3.4+';
+$plugin->requires = 2017051502;
+$plugin->maturity = MATURITY_RC;
