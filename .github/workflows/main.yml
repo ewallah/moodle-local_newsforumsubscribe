@@ -9,9 +9,13 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        moodle-branch: ['master', MOODLE_401_STABLE]
+        moodle-branch: ['master', MOODLE_401_STABLE, 'MOODLE_402_STABLE']
         php: ['8.0']
         database: ['mysqli']
+        include:
+          - php: '8.1'
+            moodle-branch: 'MOODLE_402_STABLE'
+            database: mysqli
 
     name: ${{ matrix.moodle-branch }}  php ${{ matrix.php }}  ${{ matrix.database }}
 
@@ -25,15 +29,9 @@ jobs:
         uses: shivammathur/setup-php@v2
         with:
           php-version: ${{ matrix.php }}
-          extensions: mbstring, pgsql, mysqli, gd, xmlrpc, zip
+          extensions: mbstring, mysqli, gd, xmlrpc, zip
           ini-values: max_input_vars=5000
           coverage: xdebug
-
-      - name: cache composer
-        uses: actions/cache@v2
-        with:
-          path: ~/.composer/cache/
-          key: composer-cache
 
       - name: composer
         run: |
