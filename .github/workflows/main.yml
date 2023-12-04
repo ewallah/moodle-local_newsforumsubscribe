@@ -9,7 +9,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        moodle-branch: ['master', MOODLE_401_STABLE, 'MOODLE_402_STABLE']
+        moodle-branch: ['main', MOODLE_401_STABLE, 'MOODLE_402_STABLE']
         php: ['8.0']
         database: ['mysqli']
         include:
@@ -31,7 +31,7 @@ jobs:
           php-version: ${{ matrix.php }}
           extensions: mbstring, mysqli, gd, xmlrpc, zip
           ini-values: max_input_vars=5000
-          coverage: xdebug
+          coverage: pcov
 
       - name: composer
         run: |

@@ -25,7 +25,7 @@
 
 namespace local_newsforumsubscribe\privacy;
 
-use \core_privacy\tests\provider_testcase;
+use core_privacy\tests\provider_testcase;
 
 /**
  * Privacy tests for local newsforumsubscribe.
